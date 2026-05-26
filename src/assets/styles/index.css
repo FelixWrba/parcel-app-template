@@ -1,0 +1,24 @@
+main {
+    margin: auto;
+    max-width: 1000px;
+    padding: 2rem;
+}
+
+h1 {
+    font-size: 2.5em;
+    font-weight: bolder;
+}
+
+code {
+    font-family: 'Courier New', Courier, monospace;
+}
+
+a,
+a:visited {
+    color: blue;
+}
+
+button {
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+}
