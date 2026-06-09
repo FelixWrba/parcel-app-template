@@ -13,10 +13,19 @@
   <main>
     <h1>Parcel App Template</h1>
     <p>Edit <code>src/index.html</code> to get started!</p>
-    <p><a href="https://parceljs.org/getting-started/webapp/" target="_blank" rel="noopener noreferrer">Documentation</a></p>
+    <p><a href="https://parceljs.org/getting-started/webapp/" target="_blank"
+        rel="noopener noreferrer">Documentation</a></p>
     <button id="btn">0</button>
   </main>
+
   <script type="module" src="./assets/scripts/index.js"></script>
+  <script type="module">
+    if (navigator.serviceWorker) {
+      navigator.serviceWorker.register(
+        new URL('./assets/scripts/service-worker.js', import.meta.url), { type: "module" }
+      )
+    }
+  </script>
 </body>
 
 </html>

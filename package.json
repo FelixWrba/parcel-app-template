@@ -6,11 +6,14 @@
     "name": "Felix Wrba"
   },
   "source": "src/index.html",
+  "browserslist": "baseline widely available",
   "scripts": {
     "start": "parcel",
     "build": "rm -rf dist && parcel build --no-source-maps"
   },
-  "dependencies": {},
+  "dependencies": {
+    "@parcel/service-worker": "^2.16.4"
+  },
   "devDependencies": {
     "parcel": "^2.14.0"
   }
