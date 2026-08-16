@@ -1,23 +1,215 @@
 @font-face {
-  font-family: 'Roboto';
-  src: url("../fonts/Roboto-Regular.ttf");
+    font-family: 'Roboto';
+    src: url("../fonts/Roboto-Regular.ttf");
+}
+
+:root {
+    --c-pr: hsl(180, 100%, 25%);
+    --c-pr-dark: hsl(180, 100%, 20%);
+    --c-pr-trans: hsla(180, 100%, 25%, 0.5);
+
+    --c-bg: hsl(210, 5%, 98%);
+    --c-bg-dark: hsl(210, 5%, 90%);
+
+    --c-tx: hsl(210, 5%, 5%);
+
+    --c-bo: hsl(0, 0%, 80%);
 }
 
 *,
 *::before,
 *::after {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-  font: inherit;
-  -webkit-tap-highlight-color: transparent;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font: inherit;
+    -webkit-tap-highlight-color: transparent;
 }
 
 body {
-  line-height: 1.6;
-  font-family: "Roboto", Arial, Helvetica, sans-serif;
-  font-size: 1rem;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+    line-height: 1.6;
+    font-family: "Roboto", Arial, Helvetica, sans-serif;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+
+    background-color: var(--c-bg);
+    color: var(--c-tx);
+}
+
+main {
+    margin: auto;
+    max-width: 1000px;
+    padding: 2rem;
+}
+
+h1 {
+    font-size: 2.5rem;
+    font-weight: bolder;
+}
+
+h2 {
+    font-size: 2rem;
+    font-weight: bolder;
+}
+
+h3 {
+    font-size: 1.5rem;
+    font-weight: bolder;
+}
+
+ul {
+    padding-inline-start: 2rem;
+    list-style-type: disc;
+}
+
+li::marker {
+    color: var(--c-pr);
+}
+
+code {
+    font-family: 'Courier New', Courier, monospace;
+}
+
+strong {
+    font-weight: bolder;
+}
+
+em {
+    font-style: italic;
+}
+
+u {
+    text-decoration: underline;
+}
+
+s {
+    text-decoration: line-through;
+}
+
+a,
+a:visited {
+    color: var(--c-pr);
+    text-decoration: underline;
+}
+
+a:hover {
+    color: var(--c-pr-dark);
+}
+
+.btn {
+    font-weight: bolder;
+    padding: 0.5rem 1rem;
+    border-radius: 0.25rem;
+    border: none;
+    background-color: var(--c-pr);
+    color: var(--c-bg);
+    user-select: none;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background-color: var(--c-pr-dark);
+}
+
+.btn.sec {
+    color: var(--c-pr);
+    background-color: transparent;
+}
+
+.btn.sec:hover {
+    background-color: var(--c-bg-dark);
+}
+
+.field {
+    border-radius: 0.25rem;
+    border: 1px solid var(--c-bo);
+    background-color: transparent;
+    padding: 0.5rem 1rem;
+}
+
+.field:focus {
+    border-color: var(--c-pr-trans);
+}
+
+textarea.field {
+    width: 100%;
+    resize: vertical;
+}
+
+.autogrow {
+    field-sizing: content;
+    resize: none;
+    max-width: 100%;
+}
+
+.checkmark {
+    position: relative;
+    appearance: none;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    background-color: var(--c-bg);
+    width: 1.5rem;
+    height: 1.5rem;
+    border: 1px solid var(--c-bo);
+    border-radius: 0.25rem;
+    background-size: 1rem;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.checkmark:focus {
+    border-color: var(--c-pr-trans);
+}
+
+.checkmark:checked {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='rgb(255, 255, 255)' stroke-width='4' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='20 6 9 17 4 12'%3E%3C/polyline%3E%3C/svg%3E");
+    background-color: var(--c-pr);
+    border-color: var(--c-pr);
+}
+
+.switch {
+    position: relative;
+    appearance: none;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    background-color: var(--c-bo);
+    border-radius: 1rem;
+    width: 2.5rem;
+    height: 1.5rem;
+}
+
+.switch:checked {
+    background-color: var(--c-pr);
+}
+
+.switch::before {
+    content: '';
+    position: absolute;
+    width: 1em;
+    height: 1em;
+    border-radius: 99px;
+    background-color: var(--c-bg);
+    left: 0.25rem;
+    top: 0.25rem;
+    transition: all .3s;
+}
+
+.switch:checked::before {
+    left: 1.25rem;
+}
+
+input,
+textarea,
+button,
+a {
+    outline: 2px solid transparent;
+    transition: all 0.2s;
+}
+
+input:focus,
+textarea:focus,
+button:focus,
+a:focus {
+    outline-color: var(--c-pr-trans);
 }

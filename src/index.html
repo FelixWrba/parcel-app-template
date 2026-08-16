@@ -13,14 +13,39 @@
   <main>
     <h1>Parcel App Template</h1>
     <p>Edit <code>src/index.html</code> to get started!</p>
-    <p><a href="https://parceljs.org/getting-started/webapp/" target="_blank"
-        rel="noopener noreferrer">Documentation</a></p>
-    <button id="btn">0</button>
+
+    <a href="https://parceljs.org/getting-started/webapp/" target="_blank" rel="noopener noreferrer">Parcel docs</a>
+
+    <div class="counter">
+      <h2>Counter Example</h2>
+      <button id="btn-increase" class="btn">0</button>
+      <button id="btn-reset" class="btn sec">Reset</button>
+    </div>
+
+    <div>
+      <input type="checkbox" id="x" class="checkmark">
+      <label for="x">I agree to the <a href="#">Terms of service</a></label><br>
+      <input type="radio" name="a" id="yes">
+      <label for="yes">Yes</label><br>
+      <input type="radio" name="a" id="no">
+      <label for="no">No</label><br>
+      <input type="checkbox" id="y" class="switch">
+      <label for="y">Collect my data</label>
+    </div>
+
+    <div>
+      <h2>Class Reference</h2>
+      <ul>
+        <li><strong>Input, Textarea:</strong> <code>.field</code>: Text field, <code>.autogrow</code>: Change size of text field to fit content</li>
+        <li><strong>Buttons:</strong> <code>.btn</code>: Primary button, <code>.sec</code>: Secondary button</li>
+        <li><strong>Content:</strong> h1, h2, h3, <a href="#" onclick="event.preventDefault()">Link: a</a>, <code>Monospace: code</code>, <strong>Bold: strong</strong>, <em>Italic: em</em>, <u>Underline: u</u>, <s>Strikethrough: s</s></li>
+      </ul>
+    </div>
   </main>
 
   <script type="module" src="./assets/scripts/index.js"></script>
   <script type="module">
-    if (navigator.serviceWorker) {
+    if (navigator.serviceWorker && window.location.hostname !== 'localhost') {
       navigator.serviceWorker.register(
         new URL('./service-worker.js', import.meta.url), { type: "module" }
       )
