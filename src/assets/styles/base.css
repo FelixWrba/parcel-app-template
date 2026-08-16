@@ -16,6 +16,21 @@
     --c-bo: hsl(0, 0%, 80%);
 }
 
+@media (prefers-color-scheme: dark) {
+    body {
+        --c-pr: hsl(180, 100%, 35%);
+        --c-pr-dark: hsl(180, 100%, 30%);
+        --c-pr-trans: hsla(180, 100%, 35%, 0.5);
+
+        --c-bg: hsl(210, 5%, 15%);
+        --c-bg-dark: hsl(210, 5%, 5%);
+
+        --c-tx: hsl(210, 5%, 95%);
+
+        --c-bo: hsl(0, 0%, 40%);
+    }
+}
+
 *,
 *::before,
 *::after {
@@ -58,8 +73,16 @@ h3 {
     font-weight: bolder;
 }
 
+ol,
 ul {
     padding-inline-start: 2rem;
+}
+
+ol {
+    list-style-type: decimal;
+}
+
+ul {
     list-style-type: disc;
 }
 
@@ -168,6 +191,34 @@ textarea.field {
     border-color: var(--c-pr);
 }
 
+.radio {
+    position: relative;
+    appearance: none;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    width: 1.5rem;
+    height: 1.5rem;
+    border-radius: 1rem;
+    border: 0.0625rem solid var(--c-bo);
+    background-color: var(--c-bg);
+}
+
+.radio:checked {
+    background-color: var(--c-pr);
+    border-color: var(--c-pr);
+}
+
+.radio::before {
+    content: '';
+    position: absolute;
+    left: 0.3125rem;
+    top: 0.3125rem;
+    width: 0.75em;
+    height: 0.75em;
+    border-radius: 1rem;
+    background-color: var(--c-bg);
+}
+
 .switch {
     position: relative;
     appearance: none;
@@ -192,7 +243,7 @@ textarea.field {
     background-color: var(--c-bg);
     left: 0.25rem;
     top: 0.25rem;
-    transition: all .3s;
+    transition: all 0.2s;
 }
 
 .switch:checked::before {
