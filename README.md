@@ -6,6 +6,7 @@ Basic structure for a website/webapp with Parcel.js
 * Styled components
 * Dark mode
 * Bundling
+* PWA functionality ([icon generator](https://icon.kitchen/))
 * Offline functionality
 
 ## Styled components

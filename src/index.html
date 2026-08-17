@@ -4,9 +4,20 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#008080">
   <title>Parcel App Template</title>
+  <meta name="description" content="Basic structure for a website/webapp with Parcel.js">
   <link rel="stylesheet" href="./assets/styles/base.css">
   <link rel="stylesheet" href="./assets/styles/index.css">
+  <link rel="manifest" href="manifest.json">
+  <link rel="icon" href="icons/favicon.ico" sizes="any">
+  <link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="msapplication-navbutton-color" content="#008080">
+  <meta name="msapplication-starturl" content="/">
 </head>
 
 <body>
@@ -25,7 +36,9 @@
 
   <script type="module" src="./assets/scripts/index.js"></script>
   <script type="module">
-    if (navigator.serviceWorker && window.location.hostname !== 'localhost') {
+    let debug = window.location.hostname === 'localhost';
+
+    if (navigator.serviceWorker && !debug) {
       navigator.serviceWorker.register(
         new URL('./service-worker.js', import.meta.url), { type: "module" }
       )

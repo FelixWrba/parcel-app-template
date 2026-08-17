@@ -4,6 +4,7 @@
 }
 
 :root {
+    /* primary: #008080, bg: #fafafa*/
     --c-pr: hsl(180, 100%, 25%);
     --c-pr-dark: hsl(180, 100%, 20%);
     --c-pr-trans: hsla(180, 100%, 25%, 0.5);
